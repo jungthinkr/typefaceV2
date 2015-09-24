@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="cUi-kZ-frf">
+            <objects>
+                <navigationController storyboardIdentifier="showLogin" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pGg-6v-bdr" kind="relationship" relationship="rootViewController" id="RxB-wf-QIq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="64"/>
+        </scene>
+        <!--ListOfFriends-->
+        <scene sceneID="VgW-fR-Quf">
+            <objects>
+                <tableViewController title="ListOfFriends" id="pGg-6v-bdr" customClass="ListOfFriends" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="lOY-Pi-wUP">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="pGg-6v-bdr" id="DUU-Kd-uwy"/>
+                            </connections>
+                        </searchBar>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Ve-f5-wYA">
+                            <rect key="frame" x="0.0" y="520" width="320" height="48"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Sync Contacts">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="syncContacts:" destination="pGg-6v-bdr" eventType="touchUpInside" id="9eJ-F7-yNm"/>
+                            </connections>
+                        </button>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="2pz-XF-uhl" style="IBUITableViewCellStyleDefault" id="m0d-ak-lc9">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0d-ak-lc9" id="hJe-tE-B9y">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2pz-XF-uhl">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="pGg-6v-bdr" id="P41-gY-KXY"/>
+                            <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="List of Friends " id="tQt-TN-PWz">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="fbR-0L-hgT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u2h-CC-f9f">
+                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5e8-3d-cUw" kind="push" id="Gq2-mk-eHR"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="logout:" destination="pGg-6v-bdr" id="Hs5-Tk-kWk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="21g-Z9-h1l">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I16-Ci-efZ">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkinternet:" destination="pGg-6v-bdr" eventType="touchUpInside" id="N4p-0t-1b1"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="QY4-cB-LJp" id="VW4-cg-CGc"/>
+                        <outlet property="searchbar" destination="lOY-Pi-wUP" id="231-BV-1Sh"/>
+                        <outlet property="syncContacts" destination="4Ve-f5-wYA" id="har-It-YBs"/>
+                        <outlet property="syncContactsbutton" destination="4Ve-f5-wYA" id="pEd-4q-hDJ"/>
+                        <outlet property="view" destination="mLL-gJ-YKr" id="Hfk-Bd-1AY"/>
+                        <segue destination="5e8-3d-cUw" kind="push" identifier="showLogin" id="SxN-gw-c86"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="j61-pg-8WP">
+                    <connections>
+                        <outlet property="delegate" destination="pGg-6v-bdr" id="QjI-g2-UDF"/>
+                        <outlet property="searchContentsController" destination="pGg-6v-bdr" id="lQZ-6V-RjL"/>
+                        <outlet property="searchResultsDataSource" destination="pGg-6v-bdr" id="iub-ao-mFz"/>
+                        <outlet property="searchResultsDelegate" destination="pGg-6v-bdr" id="vkL-Cy-GxZ"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="OmM-ZT-IDS">
+                    <connections>
+                        <outlet property="delegate" destination="pGg-6v-bdr" id="93D-xb-n38"/>
+                        <outlet property="searchContentsController" destination="pGg-6v-bdr" id="6ab-OY-sPw"/>
+                        <outlet property="searchResultsDataSource" destination="pGg-6v-bdr" id="8Mf-F7-7DJ"/>
+                        <outlet property="searchResultsDelegate" destination="pGg-6v-bdr" id="uDy-1z-mrG"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="QY4-cB-LJp">
+                    <connections>
+                        <outlet property="delegate" destination="pGg-6v-bdr" id="Peh-gR-mEo"/>
+                        <outlet property="searchBar" destination="lOY-Pi-wUP" id="eyl-Kl-edY"/>
+                        <outlet property="searchContentsController" destination="pGg-6v-bdr" id="kb7-ek-MeR"/>
+                        <outlet property="searchResultsDataSource" destination="pGg-6v-bdr" id="QxP-bK-ykg"/>
+                        <outlet property="searchResultsDelegate" destination="pGg-6v-bdr" id="78d-mh-Ita"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="459" y="64"/>
+        </scene>
+        <!--Buttons View Controller-->
+        <scene sceneID="PAk-Yz-leX">
+            <objects>
+                <viewController storyboardIdentifier="buttons" id="rKs-ED-aTb" customClass="buttonsViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="x4D-fh-BiO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9V-JM-8OQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913" y="48"/>
+        </scene>
+        <!--Enter Number View Controller-->
+        <scene sceneID="fnW-dc-Fn8">
+            <objects>
+                <viewController id="5e8-3d-cUw" customClass="enterNumberViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="um4-4g-vo3"/>
+                        <viewControllerLayoutGuide type="bottom" id="QIs-q4-fgy"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="ZfJ-P9-TDH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Phone Number" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DgT-ug-TVl">
+                                <rect key="frame" x="96" y="218" width="190" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <pickerView clipsSubviews="YES" alpha="0.59999999999999964" tag="-2" contentMode="top" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EWP-MU-9Z4">
+                                <rect key="frame" x="16" y="348" width="288" height="144"/>
+                                <color key="backgroundColor" red="0.99607849120000003" green="0.99215692280000001" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contacts Sync" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yr7-BI-VpT">
+                                <rect key="frame" x="107" y="189" width="158" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+1" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lP5-uq-eMd">
+                                <rect key="frame" x="16" y="218" width="81" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Verification Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCM-KS-Vqp">
+                                <rect key="frame" x="16" y="218" width="270" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-TC-MuN">
+                                <rect key="frame" x="128" y="256" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kbA-4p-amo"/>
+                                </constraints>
+                                <state key="normal" title="GO">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="LogIn:" destination="5e8-3d-cUw" eventType="touchUpInside" id="hYd-3b-8om"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j74-0X-KHk">
+                                <rect key="frame" x="60" y="256" width="183" height="30"/>
+                                <state key="normal" title="Enter Verification Code">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterCode:" destination="5e8-3d-cUw" eventType="touchUpInside" id="dDo-4T-kdt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yfh-uu-Vax">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="KWp-70-P2P">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CeU-Hd-esi">
+                                <rect key="frame" x="0.0" y="72" width="146" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Return To Login">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="5e8-3d-cUw" eventType="touchUpInside" id="Bc1-aH-JgD"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="CeU-Hd-esi" id="is7-zZ-uLr"/>
+                        <outlet property="countryTextField" destination="lP5-uq-eMd" id="UBn-kZ-M4u"/>
+                        <outlet property="entercode" destination="j74-0X-KHk" id="VLg-wH-uRg"/>
+                        <outlet property="loginnum" destination="8Gf-TC-MuN" id="sEw-RU-HB1"/>
+                        <outlet property="numberTextField" destination="DgT-ug-TVl" id="2Oy-u1-1lc"/>
+                        <outlet property="picker" destination="EWP-MU-9Z4" id="RKy-vc-glc"/>
+                        <outlet property="verificationTextField" destination="dCM-KS-Vqp" id="Vs4-uH-SBc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pL1-pq-c0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="-570"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Gq2-mk-eHR"/>
+    </inferredMetricsTieBreakers>
+</document>
